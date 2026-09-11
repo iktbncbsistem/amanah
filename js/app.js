@@ -41,10 +41,14 @@ function handleRoute(hash) {
                 pageTitle.textContent = "Dashboard Eksekutif";
                 renderDashboard(mainView);
                 break;
-            case '#kursus':
-                pageTitle.textContent = "Pengurusan Kursus";
-                renderEmptyState(mainView, "Tiada kursus baharu", "Sila tambah kursus dalam katalog.");
-                break;
+case '#kursus':
+    pageTitle.textContent = "Katalog Kursus";
+    if (typeof CourseModule !== 'undefined') {
+        CourseModule.renderCatalog(mainView);
+    } else {
+        mainView.innerHTML = "Ralat: Modul Kursus tidak dijumpai.";
+    }
+    break;
             case '#joborder':
                 pageTitle.textContent = "Pengurusan Job Order";
                 renderEmptyState(mainView, "Tiada tempahan Job Order", "Tempahan baru akan dipaparkan di sini.");
