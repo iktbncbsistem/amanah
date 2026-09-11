@@ -23,13 +23,22 @@
             <div class="sidebar-header">
                 ILKBS Latihan Khas
             </div>
-            <nav class="sidebar-nav">
-                <a href="#dashboard" class="nav-item active">🏠 Dashboard</a>
-                <a href="#kursus" class="nav-item">📚 Kursus</a>
-                <a href="#joborder" class="nav-item">🛠️ Job Order</a>
-                <a href="#kewangan" class="nav-item">💰 Kewangan</a>
-                <a href="#laporan" class="nav-item">📊 Laporan</a>
-            </nav>
+<nav class="sidebar-nav">
+    <a href="#dashboard" class="nav-item active">🏠 Dashboard</a>
+    
+    <!-- Hanya dilihat oleh Admin, Penyelaras dan Pengajar -->
+    <a href="#kursus" class="nav-item" data-role="ADMIN,COORDINATOR,INSTRUCTOR">📚 Kursus</a>
+    <a href="#joborder" class="nav-item" data-role="ADMIN,COORDINATOR,INSTRUCTOR">🛠️ Job Order</a>
+    
+    <!-- Hanya dilihat oleh Admin dan Kewangan -->
+    <a href="#kewangan" class="nav-item" data-role="ADMIN,FINANCE">💰 Kewangan</a>
+    
+    <!-- Dilihat oleh Admin dan Penyelaras -->
+    <a href="#laporan" class="nav-item" data-role="ADMIN,COORDINATOR,FINANCE">📊 Laporan</a>
+    
+    <!-- Khas untuk Admin -->
+    <a href="#pengguna" class="nav-item" data-role="ADMIN">👥 Pengguna</a>
+</nav>
         </aside>
 
         <!-- Main Workspace -->
@@ -51,23 +60,24 @@
         </main>
 
         <!-- Mobile Bottom Nav -->
-        <nav class="bottom-nav">
-            <a href="#dashboard" class="bottom-nav-item active">
-                <span>🏠</span><span>Utama</span>
-            </a>
-            <a href="#kursus" class="bottom-nav-item">
-                <span>📚</span><span>Modul</span>
-            </a>
-            <a href="#tindakan" class="bottom-nav-item action-btn">
-                <span>➕</span><span>Tindakan</span>
-            </a>
-            <a href="#kewangan" class="bottom-nav-item">
-                <span>💰</span><span>Kewangan</span>
-            </a>
-            <a href="#profil" class="bottom-nav-item">
-                <span>👤</span><span>Profil</span>
-            </a>
-        </nav>
+<!-- Mobile Bottom Nav -->
+<nav class="bottom-nav">
+    <a href="#dashboard" class="bottom-nav-item active">
+        <span>🏠</span><span>Utama</span>
+    </a>
+    <a href="#kursus" class="bottom-nav-item" data-role="ADMIN,COORDINATOR,INSTRUCTOR">
+        <span>📚</span><span>Modul</span>
+    </a>
+    <a href="#tindakan" class="bottom-nav-item action-btn" data-role="ADMIN,COORDINATOR,INSTRUCTOR,FINANCE">
+        <span>➕</span><span>Tindakan</span>
+    </a>
+    <a href="#kewangan" class="bottom-nav-item" data-role="ADMIN,FINANCE">
+        <span>💰</span><span>Kewangan</span>
+    </a>
+    <a href="#profil" class="bottom-nav-item">
+        <span>👤</span><span>Profil</span>
+    </a>
+</nav>
     </div>
 
     <!-- Scripts -->
